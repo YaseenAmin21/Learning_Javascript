@@ -79,3 +79,32 @@ console.log(Object.values(tinderUser)); // return type is array
 console.log(Object.entries(tinderUser)); // return type is array
 
 console.log(tinderUser.hasOwnProperty("isLoggedIn")); // True
+
+// Destructuring In Objects
+
+const course = {
+  coursename: "js in hindi",
+  price: "999",
+  courseInstructor: "yaseen",
+};
+
+course.courseInstructor;
+
+//  destruturing and rename the varaible
+const { courseInstructor: instructor } = course;
+
+console.log(instructor);
+
+const navbar = ({ company }) => {
+  console.log(company);
+};
+
+navbar({ company: "Yaseen" });
+
+// JSON Respones Structure looks like....
+// {
+//   "name": "yaseen";
+//   "coursename": "js in hindi";
+//   "price": "free";
+// }
+[{}, {}, {}, {}, {}];
