@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body
+    style="
+      font-family: sans-serif, 'Lucida Sans', 'Lucida Sans Regular',
+        'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    "
+  >
+    <h1>Chai aur javascript</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    <script>
+      // const sayDate = function (str) {
+      //   console.log(`${str}, Yaseen`, Date.now());
+      // };
+
+      const start = document.getElementById("start");
+      const stop = document.getElementById("stop");
+      // let intervalId = null;
+
+      // start.addEventListener("click", function () {
+      //   console.log("Interval has started...");
+      //   intervalId = setInterval(sayDate, 1000);
+      // });
+
+      // stop.addEventListener("click", function () {
+      //   console.log("Interval has ended.....");
+      //   clearInterval(intervalId);
+      // });
+
+      // =================================================
+
+      const randomFunc = function () {
+        return Math.trunc(Math.random() * 255 + 1);
+      };
+
+      const body = document.body;
+      let startID = null;
+
+      // body.style.backgroundColor = "red";
+
+      start.addEventListener("click", function () {
+        startID = setInterval(function () {
+          body.style.backgroundColor = `rgb(${randomFunc()},${randomFunc()},${randomFunc()})`;
+        }, 1000);
+      });
+
+      stop.addEventListener("click", function () {
+        clearInterval(startID);
+      });
+    </script>
+  </body>
+</html>
